@@ -18,3 +18,14 @@ def get_payment_address(
     seeds = [b"escrow", platform.lower().encode(), norm.encode()]
     pda, _ = Pubkey.find_program_address(seeds, program_id)
     return pda
+
+def get_identity_address(
+    platform: Platform,
+    username: str,
+    network: Network = DEFAULT_NETWORK,
+) -> Pubkey:
+    norm = normalize_username(username)
+    program_id = get_program_id(network)
+    seeds = [b"identity", platform.lower().encode(), norm.encode()]
+    pda, _ = Pubkey.find_program_address(seeds, program_id)
+    return pda
