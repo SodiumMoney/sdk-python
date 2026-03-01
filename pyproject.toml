@@ -1,0 +1,16 @@
+[project]
+name = "sodium-sdk"
+version = "0.1.0"
+description = "Derive Sodium payment addresses from social handles on Solana"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["solders>=0.21.0"]
+authors = [{ name = "Sodium", email = "sdk@sodium.money" }]
+
+[project.urls]
+Homepage = "https://github.com/SodiumMoney/sdk-python"
+Repository = "https://github.com/SodiumMoney/sdk-python"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
