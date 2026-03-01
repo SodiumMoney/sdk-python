@@ -10,3 +10,6 @@ def test_payment_alias():
     a = str(get_payment_address("twitter", "@blknoiz06"))
     b = str(get_payment_address("twitter", "@BLKNOIZ06"))
     assert a == b
+
+def test_payment_unicode():
+    assert str(get_payment_address("twitter", "Ansem 🐂🀄️")) == "k7JEBhVHHWLrNdhJ87cPbpgJr98kDVQuqUb5HsVKW7S"
