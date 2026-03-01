@@ -1,4 +1,12 @@
-from sodium_sdk.addresses import get_config_address
+from sodium_sdk.addresses import get_config_address, get_payment_address
 
 def test_config_address():
     assert str(get_config_address("mainnet")) == "3WYJaf1ocPSbQAMjFhka5t8iusdH11Atw6FcxeuVYsTw"
+
+def test_payment_blknoiz06():
+    assert str(get_payment_address("twitter", "@blknoiz06")) == "HPT9k5YWkKNQcZGewGmABjRu8A5Bnem6VsBmNrNsSgyd"
+
+def test_payment_alias():
+    a = str(get_payment_address("twitter", "@blknoiz06"))
+    b = str(get_payment_address("twitter", "@BLKNOIZ06"))
+    assert a == b
